@@ -27,7 +27,7 @@ Third, to analyze $g_{augmented}$ with respect to the gene expression background
 
 $$G_{background} = f(X);\ X \sim N(0,1)$$
 
-Fourth, to extract the most relevant genes in the vector $g$; we rank each gene $i$ for the number of times where the i:th gene, $g_i$, is larger than the corresponding j:th random sample for gene $i$. In other words, we count the number of times the inequality below is satisfied, and can extract the top ranking genes for further study.
+Fourth, to extract the most relevant genes in the vector $g$; we can rank each gene $i$ for the number of times where the i:th gene, $g_i$, is larger than the corresponding j:th random sample for gene $i$. In other words, we count the number of times the inequality below is satisfied, and can extract the top ranking genes for further study.
 
 $$g_{augmented}^{i} > G_{background}^{i, j}$$
 
