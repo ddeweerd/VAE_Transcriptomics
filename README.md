@@ -11,6 +11,29 @@ Here we present how to use our VAE model, as introduced in de Weerd et al., 2023
 
 **Important:** If you want to use the model as was presented in the paper, you can use the the following [link to our Google colab jupyter notebook](https://colab.research.google.com/drive/1GwE2ShhpH8AqcKLZGuz372UJ-7o6O3tP?exids=71471476%2C71471470#scrollTo=xzoM9wLMlUwA)
 
-Our approach can be summarized in the following four steps. First, ... 
+![fig1](img/fig1.png)
+
+Our approach can be summarized in four steps (Fig. 1). First, the vector difference $\nu_{case-controls}$ of the mean compression of patients $Z_{case}$ and controls $Z_{control}$ is obtained from the encoder, as written below.
+
+$$\nu_{case-control} = z_{case}$$
+
+Second, we extract the disease signal $g_{augmented}$ using the decoder $f$, augmented with a factor $\eta$ (default value 3).
+
+$$g_{augmented} = f(\eta*\nu_{case-control})$$
+
+Third, to analyze $g_{augmented} with respect to the gene expression background, a matrix of 1,000 normally distributed random latent space variables, denoted by X, is decompressed to the background gene expression profile $G_{background}$. We remark that $G_{background}$ is a matrix containing 1,000 random gene expression profiles.
+
+$$G_{background} = f(X);\ X \sim N(0,1)$$
+
+Fourth, to extract the most relevant genes in the vector $g$; we rank each gene $i$ for the number of times where the i:th gene, $g_i$, is larger than the corresponding j:th random sample for gene $i$. In other words, we count the number of times the inequality below is satisfied, and can extract the top ranking genes for further study.
+
+$$g^{i}_{augmented} > G_{background}^{i, j}$$
+
+## How to cite
+To reference this work, please cite 
+
+Hendrik A de Weerd, Dimitri Guala, Mika Gustafsson, Jane Synnergren, Jesper Tegnér, Zelmina Lubovac-Pilav, Rasmus Magnusson
+bioRxiv 2023.10.03.560661; doi: https://doi.org/10.1101/2023.10.03.560661
+
 
 
