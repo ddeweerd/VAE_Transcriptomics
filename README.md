@@ -12,6 +12,7 @@ Here we present how to use our VAE model, as introduced in de Weerd et al., 2023
 **Important:** If you want to use the model as was presented in the paper, you can use the the following [link to our Google colab jupyter notebook](https://colab.research.google.com/drive/1GwE2ShhpH8AqcKLZGuz372UJ-7o6O3tP?exids=71471476%2C71471470#scrollTo=xzoM9wLMlUwA)
 
 ![fig1](img/fig1.png)
+Figure 1: Outline of the gene module extraction procedure. We devise an approach to extract relevant groups of genes from factorial data, i.e., data containing a disease case and control samples. These two factors are compressed to the latent space and the respective mean difference is calculated, denoted by the disease vector. Next, the disease vector signal is amplified with a factor $\eta$ and decompressed. The decompressed values are then compared to decompressed random, normally distributed data.
 
 Our approach can be summarized in four steps (Fig. 1). First, the vector difference $\nu_{case-controls}$ of the mean compression of patients $Z_{case}$ and controls $Z_{control}$ is obtained from the encoder, as written below.
 
