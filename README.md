@@ -23,7 +23,7 @@ Second, we extract the disease signal $g_{augmented}$ using the decoder $f$, aug
 
 $$g_{augmented} = f(\eta*\nu_{case-control})$$
 
-Third, to analyze $g_{augmented} with respect to the gene expression background, a matrix of 1,000 normally distributed random latent space variables, denoted by X, is decompressed to the background gene expression profile $G_{background}$. We remark that $G_{background}$ is a matrix containing 1,000 random gene expression profiles.
+Third, to analyze $g_{augmented}$ with respect to the gene expression background, a matrix of 1,000 normally distributed random latent space variables, denoted by X, is decompressed to the background gene expression profile $G_{background}$. We remark that $G_{background}$ is a matrix containing 1,000 random gene expression profiles.
 
 $$G_{background} = f(X);\ X \sim N(0,1)$$
 
